@@ -5,24 +5,24 @@ export default function Compass() {
 
       {/* Circle */}
       <div className="absolute inset-0 flex items-center ml-[33vw] md:ml-[21.75vw]">
-        <div className="w-[50vw] md:w-[40vw] h-[50vw] md:h-[40vw] rounded-full border border-gray-dark"></div>
+        <div className="w-[50vw] md:w-[40vw] h-[50vw] md:h-[40vw] rounded-full border border-current"></div>
       </div>
 
       <div className="absolute inset-0">
         <div className="grid grid-cols-12 grid-rows-12 w-full h-full">
           {/* Quadrant / TL */}
-          <div className="border-gray-dark border-b border-r col-span-7 md:col-span-5 row-span-1"></div>
+          <div className="border-current border-b border-r col-span-7 md:col-span-5 row-span-1"></div>
           
           {/* Quadrant / TR */}
-          <div className="border-gray-dark border-b col-span-5 md:col-span-7 row-span-1 relative overflow-hidden">
+          <div className="border-current border-b col-span-5 md:col-span-7 row-span-1 relative overflow-hidden">
             {/* Hand */}
-            <div className="w-[1px] h-full border-r border-gray-dark rotate-[45deg] origin-bottom-left absolute inset-o scale-y-[180]"></div>
+            <div className="w-[1px] h-full border-r border-current rotate-[45deg] origin-bottom-left absolute inset-o scale-y-[180]"></div>
           </div>
           
           {/* Quadrant / BL */}
-          <div className="border-gray-dark border-r col-span-7 md:col-span-5 row-span-1"></div>
+          <div className="border-current border-r col-span-7 md:col-span-5 row-span-1"></div>
           {/* Quadrant / BR */}
-          <div className="border-gray-dark col-span-5 md:col-span-7 row-span-1"></div>
+          <div className="border-current col-span-5 md:col-span-7 row-span-1"></div>
         </div>
       </div>
     </div>
