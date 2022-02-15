@@ -1,42 +1,97 @@
+import Compass from '@/components/compass'
 import Layout from '@/components/layout'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import Container from '@/components/container'
-import FancyLink from '@/components/fancyLink'
-import { fade } from '@/helpers/transitions'
+import { fade, reveal } from '@/helpers/transitions'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
+import { useState } from 'react'
 
 export default function Home() {
+  const colors = [
+    'bg-green text-gray-dark selection:bg-gray-dark selection:text-green',
+    'bg-gray text-gray-dark selection:bg-gray-dark selection:text-gray',
+    'bg-gray-light text-gray-dark selection:bg-gray-dark selection:text-gray-light',
+    'bg-gray-dark text-opacity-80 text-gray-light selection:bg-gray-light selection:text-gray-dark'
+  ]
+
+  const [colorPosition, setColorPosition] = useState(0);
+  const [currentColorTheme, setCurrentColorTheme] = useState(colors[0]);
+
+  function colourSwitcherClick() {    
+    if (colorPosition == colors.length - 1) {
+      setColorPosition(0);
+      setCurrentColorTheme(colors[0]);
+    } else {
+      setColorPosition(colorPosition + 1)
+      setCurrentColorTheme(colors[colorPosition + 1]);
+    }
+  }
+
   return (
     <Layout>
       <NextSeo title="Home" />
-
-      <Header />
-      
+     
       <LazyMotion features={domAnimation}>
         <m.main
           initial="initial"
           animate="enter"
           exit="exit"
-          className="mb-12 md:mb-16 xl:mb-24"
+          className={`p-4 md:p-6 xl:p-7 flex flex-wrap min-h-screen transition-colors ease-in-out duration-500 ${currentColorTheme}`}
         >
-          <Container>
-            <m.article variants={fade}>
-              <h1 className="font-bold text-2xl md:text-3xl xl:text-4xl mb-4">Next x Tailwind x Motion.</h1>
-              <div className="content max-w-3xl mb-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+          <m.div variants={fade} className={`absolute inset-0 z-0 w-full h-full overflow-hidden`}>
+            <div className={`w-full h-full transition-opacity ease-in-out duration-300 ${ currentColorTheme === colors[3] ? 'opacity-75' : 'opacity-100' }`}>
+              <Compass />
+            </div>
+          </m.div>
 
-                <p>Velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div className="mb-auto w-full relative z-40">
+            <m.header variants={fade} className="flex flex-wrap items-start w-full md:mb-1 xl:mb-2">
+              <h1 className="block leading-tight md:leading-tight xl:leading-tight text-[18px] md:text-[22px] xl:text-[28px] relative overflow-hidden">
+                <m.span variants={reveal} className="block">
+                  Bhuler Design <span className="block md:inline">Architects</span>
+                </m.span>
+              </h1>
+
+              <span className="block ml-auto leading-none md:leading-none xl:leading-none text-[18px] md:text-[22px] xl:text-[28px] relative overflow-hidden">
+                <m.span variants={reveal} className="block">London — UK</m.span>
+              </span>
+            </m.header>
+
+            <m.article variants={fade} className="w-full">
+              <div className="">
+                <a href="mailto:hello@bhulerdesign.co.uk" target="_blank" rel="noopener noreferrer" className="inline-block leading-tight md:leading-tight xl:leading-tight text-[15px] md:text-[18px] xl:text-[20px] group overflow-hidden relative">
+                  <m.span variants={reveal} className="block">
+                    hello@bhulerdesign.co.uk <span className="block border-b border-current w-full group-hover:-translate-x-full transition-transform ease-in-out duration-500"></span>
+                  </m.span>
+                </a><br/>
+
+                <a href="tel:07958813739" target="_blank" rel="noopener noreferrer" className="inline-block leading-tight md:leading-tight xl:leading-tight text-[15px] md:text-[18px] xl:text-[20px] group overflow-hidden relative">
+                  <m.span variants={reveal} className="block">
+                    0795 881 3739 <span className="block border-b border-current w-full group-hover:-translate-x-full transition-transform ease-in-out duration-500"></span>
+                  </m.span>
+                </a><br/>
+
+                <a href="https://www.instagram.com/bhuler_design/" target="_blank" rel="noopener noreferrer" className="inline-block leading-tight md:leading-tight xl:leading-tight text-[15px] md:text-[18px] xl:text-[20px] group overflow-hidden relative">
+                  <m.span variants={reveal} className="block">
+                    @bhuler_design <span className="block border-b border-current w-full group-hover:-translate-x-full transition-transform ease-in-out duration-500"></span>
+                  </m.span>
+                </a><br/>
               </div>
-              
-              <FancyLink destination="/about" a11yText="Navigate to the about page" label="About Page" />
             </m.article>
-          </Container>
+          </div>
+
+          <m.footer variants={fade} className="w-full mt-auto relative z-40 md:flex md:items-end">
+            <button onClick={() => colourSwitcherClick()} className="block outline-none w-[18px] md:w-[25px] h-[18px] md:h-[25px] border border-current rounded-full mb-3 md:mb-0 relative group">
+              <div className="absolute inset-0 flex items-center justify-center translate-y-1/2">
+                <div className="w-full h-[1px] border-b border-current -rotate-45 transition-transform ease-in-out duration-500 scale-x-0 group-hover:scale-x-150 origin-bottom-left"></div>
+              </div>
+            </button>
+
+            <span className="block md:ml-auto leading-tight md:leading-tight xl:leading-tight text-[13px] md:text-[22px] xl:text-[28px] relative overflow-hidden">
+              <m.span variants={reveal} className="block">&copy; 2022 — All rights reserved</m.span>
+            </span>
+          </m.footer>
         </m.main>
       </LazyMotion>
-
-      <Footer />
     </Layout>
   )
 }

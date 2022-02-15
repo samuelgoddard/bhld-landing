@@ -1,8 +1,7 @@
-/* @font-face {
-  font-family: 'Example Sans';
-  src: url('../public/fonts/ExampleSans-Regular.woff2') format('woff2'),
-      url('../public/fonts/ExampleSans-Regular.woff') format('woff');
-  font-weight: 400;
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('../public/fonts/SuisseIntl-Book.woff2') format('woff2'),
+      url('../public/fonts/SuisseIntl-Book.woff') format('woff');
   font-style: normal;
   font-display: swap;
-} */
+}

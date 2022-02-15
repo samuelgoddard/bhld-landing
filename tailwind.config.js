@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['Arial', 'sans-serif'],
+      'sans': ['SuisseIntl', 'Arial', 'sans-serif'],
       'mono': ['Lucida Console', 'Courier', 'monospace'],
     },
     screens: {
@@ -20,10 +20,11 @@ module.exports = {
       colors: {
         'black': '#000',
         'white': '#FFF',
-        'example-color': {
-          light: '#ffb288',
-          DEFAULT: '#d18d67',
-          dark: '#ce8860',
+        'green': '#86938D',
+        'gray': {
+          light: '#C4C4C4',
+          DEFAULT: '#B0B5B8',
+          dark: '#414141',
         },
       }
     },

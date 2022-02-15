@@ -1,15 +1,21 @@
 export default {
-  defaultTitle: 'Boilerplate | Next x Tailwind x Motion',
-  description: 'A simple Next.js starter kit with Tailwind and Framer Motion.',
-  titleTemplate: '%s | Next x Tailwind x Motion',
+  defaultTitle: 'Bhuler Design Architects',
+  description: 'Bhuler Design are architects based in East London. We help develop a range of projects from designs for planning permission to refurbishments and ...',
+  titleTemplate: '%s | Bhuler Design Architects',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://sg-next-tailwind-motion.vercel.app/',
-    site_name: 'Next x Tailwind x Motion',
+    url: 'https://bhld.vercel.app/',
+    site_name: 'Bhuler Design Architects',
+    images: [
+      {
+        url: '/images/social.jpg',
+        width: 800,
+        height: 600
+      },
+    ]
   },
   twitter: {
-    handle: '@samuelgoddard',
     site: '@site',
     cardType: 'summary_large_image',
   },
