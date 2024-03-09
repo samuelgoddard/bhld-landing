@@ -13,6 +13,43 @@
 
 
 /* Simple defaults */
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
 body {
-  @apply font-sans antialiased text-black bg-white;
+  @apply font-sans antialiased text-black bg-white tracking-tighter md:tracking-tighter xl:tracking-tighter;
+  overscroll-behavior: none!important;
+  overflow-y: scroll !important;
+
+  @apply selection:bg-black selection:text-white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.prose {
+  @apply leading-tight md:leading-tight xl:leading-tight text-[15px] md:text-[18px] xl:text-[20px];
+  
+  * + * {
+    @apply mt-4;
+  }
+}
+
+.image-fill {
+  figure, img, span {
+    @apply object-cover object-center w-full h-full absolute inset-0;
+  }
+
+  span {
+    @apply absolute inset-0 w-full h-full !important;
+  }
 }

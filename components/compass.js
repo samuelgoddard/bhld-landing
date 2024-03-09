@@ -1,7 +1,7 @@
 export default function Compass() {
 
   return (
-    <div className="relative w-full h-full">
+    <div className="absolute w-full h-full">
 
       {/* Circle */}
       <div className="absolute inset-0 flex items-center ml-[33vw] md:ml-[21.75vw]">
@@ -9,7 +9,7 @@ export default function Compass() {
       </div>
 
       <div className="absolute inset-0">
-        <div className="grid grid-cols-12 grid-rows-12 w-full h-full">
+        <div className="grid grid-cols-12 grid-rows-2 w-full h-full">
           {/* Quadrant / TL */}
           <div className="border-current border-b border-r col-span-7 md:col-span-5 row-span-1"></div>
           
