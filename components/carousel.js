@@ -47,7 +47,7 @@ export function Carousel({ items }) {
           </button>
         )}
         
-        <div className={`w-[100%] md:w-[38%] relative overflow-hidden max-w-[55dvh] md:max-w-[33dvh] mx-auto ${items[currentItem]?.asset.metadata.dimensions.height > (items[currentItem]?.asset.metadata.dimensions.width * 1.45) ? 'max-w-[35dvh] md:max-w-[35dvh]' : 'md:mt-0 md:max-w-[50dvh]' }`}  style={{ aspectRatio: `${items[currentItem].asset.metadata.dimensions.width}/${items[currentItem].asset.metadata.dimensions.height}` }}>
+        <div className={`w-[100%] md:w-[38%] relative overflow-hidden md:max-w-[33dvh] mx-auto ${items[currentItem]?.asset.metadata.dimensions.height > (items[currentItem]?.asset.metadata.dimensions.width * 1.45) ? 'max-w-[35dvh] md:max-w-[35dvh]' : 'md:mt-0 md:max-w-[50dvh]' }`}  style={{ aspectRatio: `${items[currentItem].asset.metadata.dimensions.width}/${items[currentItem].asset.metadata.dimensions.height}` }}>
           {/* {JSON.stringify(items[currentItem].asset.metadata.dimensions.height > (items[currentItem].asset.metadata.dimensions.width * 1.75))} */}
           {items.map((e,i) => {
             return (
