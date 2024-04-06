@@ -24,7 +24,7 @@ export function Carousel({ items }) {
         )}
       </div>
 
-      <div className="fixed inset-0 w-full h-[100dvh] z-[0] flex flex-wrap items-center justify-center p-3 md:p-4 xl:p-5">
+      <div className={`fixed inset-0 w-full h-[100dvg]] z-[0] flex flex-wrap items-end md:items-center justify-center p-3 pb-12 md:pb-4 md:p-4 xl:p-5`}>
         <div className="w-[15%] max-w-[25dvh] mr-auto hidden md:block">
           <div className={`w-full relative overflow-hidden mr-auto ${items[currentItem - 1]?.asset.metadata.dimensions.height > (items[currentItem - 1]?.asset.metadata.dimensions.width * 1.75) ? 'md:max-w-[12dvh]' : 'max-w-[25dvh]' }`} style={{ aspectRatio: items[currentItem-1] ? `${items[currentItem-1].asset.metadata.dimensions.width}/${items[currentItem-1].asset.metadata.dimensions.height}` : `1/1` }}>
             { items[currentItem-1] && (
@@ -42,12 +42,12 @@ export function Carousel({ items }) {
           </div>
         </div>
         {items[currentItem - 1] && (
-          <button onClick={()=> setCurrentItem(currentItem-1)} className="md:hidden fixed top-[25%] h-[50%] left-0 z-[100000] w-[40%] flex items-center justify-start p-3 text-xl">
+          <button onClick={()=> setCurrentItem(currentItem-1)} className="md:hidden fixed bottom-0 h-[65%] left-0 z-[100000] w-[40%] flex items-end justify-start p-3 text-xl">
             <>&larr;</>
           </button>
         )}
         
-        <div className={`w-[70%] md:w-[38%] relative overflow-hidden max-w-[33dvh] mx-auto ${items[currentItem]?.asset.metadata.dimensions.height > (items[currentItem]?.asset.metadata.dimensions.width * 1.75) ? 'md:max-w-[35dvh]' : 'md:mt-0 md:max-w-[50dvh]' }`}  style={{ aspectRatio: `${items[currentItem].asset.metadata.dimensions.width}/${items[currentItem].asset.metadata.dimensions.height}` }}>
+        <div className={`w-[100%] md:w-[38%] relative overflow-hidden max-w-[55dvh] md:max-w-[33dvh] mx-auto ${items[currentItem]?.asset.metadata.dimensions.height > (items[currentItem]?.asset.metadata.dimensions.width * 1.45) ? 'max-w-[35dvh] md:max-w-[35dvh]' : 'md:mt-0 md:max-w-[50dvh]' }`}  style={{ aspectRatio: `${items[currentItem].asset.metadata.dimensions.width}/${items[currentItem].asset.metadata.dimensions.height}` }}>
           {/* {JSON.stringify(items[currentItem].asset.metadata.dimensions.height > (items[currentItem].asset.metadata.dimensions.width * 1.75))} */}
           {items.map((e,i) => {
             return (
@@ -77,14 +77,17 @@ export function Carousel({ items }) {
         </div>
         
         {items[currentItem + 1] && (
-          <button onClick={()=> setCurrentItem(currentItem+1)} className="md:hidden fixed top-[25%] h-[50%] right-0 z-[100000] w-[40%] flex items-center justify-end p-3 text-xl">
+          <button onClick={()=> setCurrentItem(currentItem+1)} className="md:hidden fixed bottom-0 h-[65%] right-0 z-[100000] w-[40%] flex items-end justify-end p-3 text-xl">
             <>&rarr;</>
           </button>
         )}
 
-        {items[currentItem].caption && (
-          <div className="flex md:hidden absolute bottom-0 p-3 left-0 right-0 text-center w-full justify-center">{items[currentItem].caption}</div>
-        )}
+        
+        <div className="flex md:hidden absolute bottom-0 p-3 left-0 right-0 text-center w-full justify-center">
+          {items[currentItem].caption ? (
+            <>{items[currentItem].caption}</>
+          ) : <>&nbsp;</>}
+        </div>
       </div>
     </>
   )
