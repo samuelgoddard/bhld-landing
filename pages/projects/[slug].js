@@ -67,7 +67,7 @@ export default function ProjectSlug(initialData) {
 
               <Carousel items={project.galleryImages} />
 
-              <footer variants={fade} className="w-full mt-auto relative z-40 md:flex md:items-end md:justify-end">
+              <footer variants={fade} className="w-full mt-auto relative z-40 md:flex md:items-end md:justify-end hidden">
                 { project.next ? (
                 <Link href={`/projects/${project.next.slug.current}`}><a className="inline-block leading-tight md:leading-tight xl:leading-tight group overflow-hidden relative">
                   <m.span variants={reveal} className="block">

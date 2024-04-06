@@ -4,9 +4,7 @@ const image = `
   asset-> { ... },
   hotspot { ... },
   crop { ... },
-  caption[] {
-    ...,
-  }
+  caption
 `
 const slug = `slug { current }`
 
