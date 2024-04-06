@@ -13,6 +13,7 @@ import { projectQuery } from '@/helpers/queries'
 import SanityPageService from '@/services/sanityPageService'
 import { PortableText } from '@portabletext/react'
 import SanityImageResponsive from '@/components/sanity-image-responsive'
+import { Carousel } from '@/components/carousel'
 
 const pageService = new SanityPageService(projectQuery)
 
@@ -33,7 +34,7 @@ export default function ProjectSlug(initialData) {
 
   return (
     <Layout>
-      <NextSeo title="Project Slug" />
+      <NextSeo title={project.title} />
 
       <LazyMotion features={domAnimation}>
         <m.main
@@ -44,11 +45,6 @@ export default function ProjectSlug(initialData) {
           <Div100vh>
             <m.div variants={fade} className={`p-3 md:p-4 xl:p-5 md:pb-3 xl:pb-4 flex flex-wrap transition-colors ease-in-out duration-500 h-full bg-white`}>
               <Header />
-
-              <div className="fixed top-0 left-0 right-0 w-full flex justify-center p-3 md:p-4 xl:p-5 pointer-events-none z-[10]">
-                <span className="block leading-[1.045] md:leading-[1.045] xl:leading-[1.045] text-[18px] md:text-[22px] xl:text-[28px] relative overflow-hidden">
-                  <m.span variants={reveal} className="block">1/4</m.span></span>
-              </div>
 
               <div className="mb-auto w-full relative z-[101] pt-16 md:pt-20 xl:pt-28">
                 <m.article variants={fade} className="w-full">
@@ -69,22 +65,7 @@ export default function ProjectSlug(initialData) {
                 </m.article>
               </div>
 
-              <div variants={fade} className="fixed inset-0 w-full h-full z-[0] flex flex-wrap items-center justify-center p-3 md:p-4 xl:p-5">
-                <SanityImageResponsive
-                  image={project.galleryImages[0]}
-                  className="w-[15%] max-w-[25vh] mr-auto hidden md:block"
-                />
-
-                <SanityImageResponsive
-                  image={project.galleryImages[1]}
-                  className="w-[70%] md:w-[38%] max-w-[33vh] md:max-w-[60vh] mx-auto"
-                />
-
-                <SanityImageResponsive
-                  image={project.galleryImages[2]}
-                  className="w-[15%] max-w-[25vh] ml-auto hidden md:block"
-                />
-              </div>
+              <Carousel items={project.galleryImages} />
 
               <footer variants={fade} className="w-full mt-auto relative z-40 md:flex md:items-end md:justify-end">
                 { project.next ? (

@@ -27,7 +27,7 @@ export default function SanityImageResponsive({ image, className, alt, priority,
   if (sizes) { attributes.sizes = sizes }
 
 	return (
-    <figure className={`block relative overflow-hidden image  ${className ? className : ''}`}>
+    <figure className={`block relative overflow-hidden image ${className ? className : ''}`}>
       <div className="relative overflow-hidden">
         {/* LQIP */}
         {!priority && (
@@ -40,9 +40,9 @@ export default function SanityImageResponsive({ image, className, alt, priority,
         )}
         {/* LQIP */}
 
-        <div className="">
+        <div className={`w-full`}>
           <Image
-            className={`${className ? className : '' } `}
+            className={`w-full`}
             {...imageProps}
             {...attributes}
             {...(priority ? {
