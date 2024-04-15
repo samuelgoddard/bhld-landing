@@ -49,12 +49,12 @@ export default function ProjectSlug(initialData) {
               <div className="mb-auto w-full relative z-[101] pt-16 md:pt-20 xl:pt-28">
                 <m.article variants={fade} className="w-full">
                   <div className="max-w-[25ch] md:max-w-[32ch] relative z-[101]">
-                    <h2 className="text-[42px] md:text-[52px] xl:text-[66px] leading-[1.025] md:leading-[1.025] xl:leading-[1.025] mb-3 md:mb-5 pb-0 flex flex-wrap">
+                    <h2 className="text-[42px] md:text-[48px] xl:text-[55px] leading-[1.025] md:leading-[1.025] xl:leading-[1.025] mb-3 md:mb-5 pb-0 flex flex-wrap">
                       <Split>{project.title}</Split>
                     </h2>
                   </div>
 
-                  <span className="block leading-[1.045] md:leading-[1.045] xl:leading-[1.045] text-[18px] md:text-[22px] xl:text-[28px] relative overflow-hidden z-[101]">
+                  <span className="block leading-[1.045] md:leading-[1.045] xl:leading-[1.045] text-[18px] md:text-[20px] xl:text-[24px] relative overflow-hidden z-[101]">
                     <button onClick={() => setInfoShown(!infoShown)} className="block group">
                       <m.span variants={reveal} className="block">
                         {infoShown ? 'Hide Info' : 'Show Info' }
@@ -91,7 +91,7 @@ export default function ProjectSlug(initialData) {
                     exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.83, 0, 0.17, 1] }}}
                     className="fixed inset-0 w-full h-full bg-white z-[100] flex flex-wrap  md:justify-center items-end md:items-center p-3 md:p-4 xl:p-5"
                   >
-                    <div className="w-full max-w-[35ch] prose">
+                    <div className="w-full max-w-[35ch] prose prose--small">
                       <PortableText value={project.projectInfo}></PortableText>
                     </div>
                   </m.div>

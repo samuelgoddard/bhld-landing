@@ -24,9 +24,9 @@ export function Carousel({ items }) {
         )}
       </div>
 
-      <div className={`fixed inset-0 w-full h-[100dvg]] z-[0] flex flex-wrap items-end md:items-center justify-center p-3 pb-12 md:pb-4 md:p-4 xl:p-5`}>
+      <div className={`fixed inset-0 w-full h-[100dvh] z-[0] flex flex-wrap items-end md:items-center justify-center p-3 pb-12 md:pb-4 md:p-4 xl:p-5`}>
         <div className="w-[15%] max-w-[25dvh] mr-auto hidden md:block">
-          <div className={`w-full relative overflow-hidden mr-auto ${items[currentItem - 1]?.asset.metadata.dimensions.height > (items[currentItem - 1]?.asset.metadata.dimensions.width * 1.75) ? 'md:max-w-[12dvh]' : 'max-w-[25dvh]' }`} style={{ aspectRatio: items[currentItem-1] ? `${items[currentItem-1].asset.metadata.dimensions.width}/${items[currentItem-1].asset.metadata.dimensions.height}` : `1/1` }}>
+          <div className={`w-full relative overflow-hidden mr-auto block grayscale hover:grayscale-0 hover:opacity-100 transition-[filter,opacity] ease-in-out duration-[500ms] opacity-80 ${items[currentItem - 1]?.asset.metadata.dimensions.height > (items[currentItem - 1]?.asset.metadata.dimensions.width * 1.75) ? 'md:max-w-[8dvh]' : 'max-w-[13dvh]' }`} style={{ aspectRatio: items[currentItem-1] ? `${items[currentItem-1].asset.metadata.dimensions.width}/${items[currentItem-1].asset.metadata.dimensions.height}` : `1/1` }}>
             { items[currentItem-1] && (
               <button onClick={()=> setCurrentItem(currentItem-1)}>
                 {items.map((e,i) => {
@@ -47,7 +47,7 @@ export function Carousel({ items }) {
           </button>
         )}
         
-        <div className={`w-[100%] md:w-[38%] relative overflow-hidden md:max-w-[33dvh] mx-auto ${items[currentItem]?.asset.metadata.dimensions.height > (items[currentItem]?.asset.metadata.dimensions.width * 1.45) ? 'max-w-[35dvh] md:max-w-[35dvh]' : 'md:mt-0 md:max-w-[50dvh]' }`}  style={{ aspectRatio: `${items[currentItem].asset.metadata.dimensions.width}/${items[currentItem].asset.metadata.dimensions.height}` }}>
+        <div className={`w-[100%] md:w-[60%] relative overflow-hidden md:max-w-[33dvh] mx-auto ${items[currentItem]?.asset.metadata.dimensions.height > (items[currentItem]?.asset.metadata.dimensions.width * 1.45) ? 'max-w-[35dvh] md:max-w-[35dvh]' : 'md:mt-0 md:max-w-[60dvh]' }`}  style={{ aspectRatio: `${items[currentItem].asset.metadata.dimensions.width}/${items[currentItem].asset.metadata.dimensions.height}` }}>
           {/* {JSON.stringify(items[currentItem].asset.metadata.dimensions.height > (items[currentItem].asset.metadata.dimensions.width * 1.75))} */}
           {items.map((e,i) => {
             return (
@@ -60,7 +60,7 @@ export function Carousel({ items }) {
         </div>
         
         <div className="w-[15%] max-w-[25dvh] ml-auto hidden md:block">
-          <div className={`w-full relative overflow-hidden ml-auto ${items[currentItem + 1]?.asset.metadata.dimensions.height > (items[currentItem + 1]?.asset.metadata.dimensions.width * 1.75) ? 'md:max-w-[12dvh]' : 'max-w-[25dvh]' }`} style={{ aspectRatio: items[currentItem+1] ? `${items[currentItem+1].asset.metadata.dimensions.width}/${items[currentItem+1].asset.metadata.dimensions.height}` : `1/1` }}>
+          <div className={`w-full relative overflow-hidden ml-auto grayscale hover:grayscale-0 hover:opacity-100 transition-[filter,opacity] ease-in-out duration-[500ms] opacity-80 ${items[currentItem + 1]?.asset.metadata.dimensions.height > (items[currentItem + 1]?.asset.metadata.dimensions.width * 1.75) ? 'md:max-w-[8dvh]' : 'max-w-[13dvh]' }`} style={{ aspectRatio: items[currentItem+1] ? `${items[currentItem+1].asset.metadata.dimensions.width}/${items[currentItem+1].asset.metadata.dimensions.height}` : `1/1` }}>
             { items[currentItem+1] && (
               <button onClick={()=> setCurrentItem(currentItem+1)}>
                 {items.map((e,i) => {

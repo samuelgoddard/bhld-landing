@@ -14,9 +14,9 @@ const pageService = new SanityPageService(homeQuery)
 export default function Home(initialData) {  
   const { data: { home }  } = pageService.getPreviewHook(initialData)()
   const colors = [
+    'bg-gray-light text-gray-dark selection:bg-gray-dark selection:text-gray-light',
     'bg-green text-gray-dark selection:bg-gray-dark selection:text-green',
     'bg-gray text-gray-dark selection:bg-gray-dark selection:text-gray',
-    'bg-gray-light text-gray-dark selection:bg-gray-dark selection:text-gray-light',
     'bg-gray-dark text-opacity-80 text-gray-light selection:bg-gray-light selection:text-gray-dark'
   ]
 

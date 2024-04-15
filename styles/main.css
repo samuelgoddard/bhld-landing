@@ -44,6 +44,14 @@ body {
   }
 }
 
+.prose--small {
+  @apply leading-tight md:leading-tight xl:leading-tight text-[14px] md:text-[18px] xl:text-[20px];
+  
+  * + * {
+    @apply mt-4;
+  }
+}
+
 .image-fill {
   figure, img, span {
     @apply object-cover object-center w-full h-full absolute inset-0;

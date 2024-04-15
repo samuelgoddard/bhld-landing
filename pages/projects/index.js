@@ -55,9 +55,9 @@ export default function Projects(initialData) {
                   {projects.map((e,i) => {
                     return (
                       <Link href={`/projects/${e.slug.current}`} key={i}>
-                        <a className="col-span-12 md:col-span-6">
+                        <a className="col-span-12 md:col-span-6 group">
                           <div className="relative overflow-hidden w-full h-[70vw] md:h-[34vw] mb-3 md:mb-2">
-                            <SanityImage image={e.teaserImage} alt={e.title} />
+                            <SanityImage image={e.teaserImage} alt={e.title} className="transition-transform ease-in-out duration-[1000ms] group-hover:scale-[1.033]" />
                           </div>
 
                           <span className="block text-base uppercase mb-[2px]"><span className="block overflow-hidden"><m.span variants={reveal} className="block">BH.0{i+1}</m.span></span></span>
@@ -74,7 +74,7 @@ export default function Projects(initialData) {
 
             <m.footer variants={fade} className="w-full mt-auto relative z-40 md:flex md:items-end md:justify-end">
 
-              <div className="md:flex md:space-x-5 w-full md:justify-end">
+              <div className="md:flex md:space-x-5 flex-1">
                 <div>
                 <a href="tel:07958813739" target="_blank" rel="noopener noreferrer" className="inline-block leading-tight md:leading-tight xl:leading-tight text-[15px] md:text-[18px] xl:text-[20px] group overflow-hidden relative">
                   <m.span variants={reveal} className="block">
@@ -95,9 +95,9 @@ export default function Projects(initialData) {
                     @bhude_architects <span className="block border-b border-current w-full group-hover:-translate-x-full transition-transform ease-in-out duration-500"></span>
                   </m.span>
                 </a>
-
-                <span className="pl-[10vw] hidden md:block mt-[3px]">2024 &copy; All Rights Reserved</span>
               </div>
+
+              <span className="hidden md:block text-right mb-[3px]">2024 &copy; All Rights Reserved</span>
 
               <span className="block md:hidden mt-[3px] text-[14px]">2024 &copy; All Rights Reserved</span>
             </m.footer>
