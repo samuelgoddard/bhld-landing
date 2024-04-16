@@ -17,7 +17,7 @@ export default function Header() {
         </Link>
       </h1>
 
-      <span className="block ml-auto leading-none md:leading-none xl:leading-none text-[18px] md:text-[22px] xl:text-[28px] relative overflow-hidden">
+      <span className="block ml-auto leading-none md:leading-none xl:leading-none text-[18px] md:text-[22px] xl:text-[26px] relative overflow-hidden">
         <nav>
           <ul className="flex space-x-3 md:space-x-4">
           <li>

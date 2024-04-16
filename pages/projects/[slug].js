@@ -46,9 +46,9 @@ export default function ProjectSlug(initialData) {
             <m.div variants={fade} className={`p-3 md:p-4 xl:p-5 md:pb-3 xl:pb-4 flex flex-wrap transition-colors ease-in-out duration-500 h-full bg-white`}>
               <Header />
 
-              <div className="mb-auto w-full relative z-[101] pt-16 md:pt-20 xl:pt-28">
+              <div className="mb-auto w-full relative z-[101] pt-16 md:pt-16 xl:pt-20">
                 <m.article variants={fade} className="w-full">
-                  <div className="max-w-[25ch] md:max-w-[32ch] relative z-[101]">
+                  <div className="max-w-[25ch] md:max-w-[30ch] xl:max-w-[32ch] relative z-[101]">
                     <h2 className="text-[42px] md:text-[48px] xl:text-[55px] leading-[1.025] md:leading-[1.025] xl:leading-[1.025] mb-3 md:mb-5 pb-0 flex flex-wrap">
                       <Split>{project.title}</Split>
                     </h2>
